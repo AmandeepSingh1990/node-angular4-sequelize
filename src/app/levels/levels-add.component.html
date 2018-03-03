@@ -1,0 +1,60 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>Create Level</h1>
+    </section>
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-xs-12">
+                <div class="box">
+                    <form [formGroup]="createLevelForm" (ngSubmit)="createLevel()">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-sm-5 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="title">Title</label>
+                                        <input type="text" class="form-control" formControlName="title" placeholder="Title">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="intro">Intro</label>
+                                        <div class="custom-select">
+                                            <select class="form-control select2" formControlName="video_id"  style="width: 100%;">
+                                                <option selected="selected" value="">Select..</option>
+                                                <option value="1">Sample Video Name</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label for="desc">Description</label>
+                                        <textarea class="form-control" rows="3" placeholder="Enter Some Description" formControlName="description"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label for="editor">HTML Snippet</label>
+                                        <quill-editor
+                                            formControlName="data"
+                                            [options]="editorOptions" rows="10">
+                                        </quill-editor>
+                                    </div>
+                                </div>        
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <button type="button" class="btn btn-danger">Cancel</button>
+                            <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>

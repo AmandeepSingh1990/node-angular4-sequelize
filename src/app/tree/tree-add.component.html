@@ -1,0 +1,173 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Create Treeitem
+        </h1>
+    </section>
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-xs-12">
+                <div class="box">
+                    <form role="form" [formGroup]="createStepDetailForm" (ngSubmit)="createStepDetail()">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-sm-5 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="title">Title</label>
+                                        <input type="text" class="form-control" formControlName="title" placeholder="Title"> </div>
+                                </div>
+                                <div class="col-sm-7 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="intro">Intro Video</label>
+                                        <div class="custom-select">
+                                            <select class="form-control select2" formControlName="title" style="width: 100%;">
+                                                <option selected="selected">Select..</option>
+                                                <option value="1">Sample Video Name</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label for="desc">Description</label>
+                                        <textarea class="form-control" formControlName="description" rows="3" id="desc" placeholder="Enter Some Description"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label for="editor">HTML Snippet</label>
+                                        <quill-editor
+                                            formControlName="data"
+                                            [options]="editorOptions" rows="10">
+                                        </quill-editor>
+                                    </div>
+                                </div>
+                                <!--<div class="col-xs-12">
+                                    <div class="sub-header">
+                                        <h2>Add Custom</h2> </div>
+                                    <div class="row">
+                                        <div class="col-md-2 col-xs-12">
+                                            <div class="form-group">
+                                            <label for="sdrange">Seed Range</label>
+                                            <input id="seed_range" type="text" name="range_2" value="1;100" data-type="double" data-step="10" data-postfix="R" data-from="50" data-to="70" data-hasgrid="true" /> 
+                                            </div>
+                                            </div>
+                                        <div class="col-md-4 col-xs-12">
+                                            <div class="form-group">
+                                            <label for="evtjson">Event JSON</label>
+                                            <textarea class="form-control" rows="3" id="evt_jsn" placeholder="Write your code here..."></textarea>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-4 col-xs-12">
+                                            <div class="form-group">
+                                            <label for="evtjson">Condition JSON</label>
+                                            <textarea class="form-control" rows="3" id="cnd_jsn" placeholder="Write your code here..."></textarea>
+                                        </div>
+                                        </div>
+                                        <div class="col-sm-2 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="name">Name</label>
+                                                <input type="name" class="form-control" id="nm" placeholder="Default"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="">Children</label>
+                                        <div class="custom-select">
+                                            <select class="form-control select2" style="width: 100%;">
+                                                <option selected="selected">Select..</option>
+                                                <option>Create new Treeitem</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="">Parents</label>
+                                        <div class="custom-select">
+                                            <select class="form-control select2" style="width: 100%;">
+                                                <option selected="selected">Select..</option>
+                                                <option>Create new Treeitem or select from List</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="type">Type</label>
+                                        <select formControlName="type" class="form-control">
+                                            <option value="questions">Questions</option>
+                                            <option value="yesno">Yes/No</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label for="type">Step</label>
+                                        <select formControlName="step_id" class="form-control">
+                                            <option value="1">Sample Step Name</option>
+                                        </select>
+                                    </div>
+                                </div>
+                               
+                                    <div class="col-xs-12" formArrayName="choices">
+                                    <div
+                                        class="row"
+                                        *ngFor="let choices of createStepDetailForm.get('choices').controls; let i = index"
+                                        [formGroupName]="i"
+                                        style="margin-top: 10px;">
+                                        <div class="col-xs-8">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            formControlName="title">
+                                        </div>
+                                        <div class="col-xs-2">
+                                        <textarea class="form-control" formControlName="description" rows="3" placeholder="Enter Some Description"></textarea>
+                                        </div>
+                                        <div class="col-xs-2">
+                                        <textarea class="form-control" formControlName="data" rows="3" placeholder="Enter Some Data"></textarea>
+                                        </div>
+                                        <div class="col-xs-2">
+                                        <select name="type" formControlName="type" class="form-control">
+                                            <option value="questions">Questions</option>
+                                            <option value="yesno">Yes/No</option>
+                                        </select>
+                                        </div>
+                                        <div class="col-xs-2">
+                                        <button
+                                            type="button"
+                                            class="btn btn-danger"
+                                            (click)="onDeleteChoice(i)">X</button>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                        <button
+                                            type="button"
+                                            class="btn btn-success"
+                                            (click)="onAddChoice()">Add Choice</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <button type="button" class="btn btn-danger">Cancel</button>
+                            <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>

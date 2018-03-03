@@ -1,0 +1,50 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Levels
+        </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding" >
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Level ID</th>
+                                    <th>Name</th>
+                            
+                                    <th>Intro Video ID</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody [sortablejs]="levels" [sortablejsOptions]="sortableOptions">
+                                   
+                                <tr *ngFor="let level of levels; let myIndex = index" [attr.id]="level.id" [attr.position]="myIndex+1">
+                                    <td>{{myIndex+1}}</td>
+                                    <td>{{level.id}}</td>
+                                    <td>{{level.title}}</td>
+                                    
+                                    <td>{{level.video_id}}</td>
+                                    <td><span *ngIf="level.status == 1" class="label label-success">Active</span><span *ngIf="level.status == 0" class="label label-danger">In-active</span></td>
+                                    <td><a [routerLink]="['/admin/levels/edit', level.id]" class="btn btn-xs btn-primary btn-edt"><i class="fa fa-pencil"></i> Edit</a><a href="javascript:;" (click)="showAlert(level.id)" class="btn btn-xs btn-danger btn-del"><i class="fa fa-trash"></i> Delete</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>

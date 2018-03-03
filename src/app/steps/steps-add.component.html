@@ -1,0 +1,74 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>{{editMode ? 'Update' : 'Create'}} Step</h1>  
+    </section>
+    <!-- Main content -->
+    <section class="content container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-xs-12">
+                <div class="box">
+                    <form [formGroup]="createStepForm" (ngSubmit)="createStep()">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="nm">Title</label>
+                                        <input type="text" class="form-control" formControlName="title" placeholder="Step Name"> </div>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="vdo">Video</label>
+                                        <div class="custom-select">
+                                            <select class="form-control select2" formControlName="video_id" style="width: 100%;">
+                                                <option selected="selected">Select..</option>
+                                                <option value="1">Sample Video Name</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label for="desc">Description</label>
+                                        <textarea class="form-control" rows="3" id="desc" placeholder="Description" formControlName="description"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label for="editor">HTML Snippet</label>
+                                        <quill-editor
+                                            formControlName="data"
+                                            [options]="editorOptions" rows="10">
+                                        </quill-editor>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="vdo">Level</label>
+                                        <div class="custom-select">
+                                            <select class="form-control select2" formControlName="level_id" style="width: 100%;">
+                                                <option selected="selected">Select..</option>
+                                                <option value="1">Sample Level Name</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="desc">Event JSON</label>
+                                        <input type="text" formControlName="event_json" class="form-control" id="vdo" placeholder="JSON Code"> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <button type="button" class="btn btn-danger">Cancel</button>
+                            <button type="submit" class="btn btn-success">{{editMode ? 'Update' : 'Create'}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>

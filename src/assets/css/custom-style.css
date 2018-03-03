@@ -1,0 +1,79 @@
+.mnu-transsition .main-sidebar {
+    -webkit-transition: -webkit-transform .3s ease-in-out, width .3s ease-in-out;
+    -moz-transition: -moz-transform .3s ease-in-out, width .3s ease-in-out;
+    -o-transition: -o-transform .3s ease-in-out, width .3s ease-in-out;
+    transition: transform .3s ease-in-out, width .3s ease-in-out;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: transparent
+}
+
+.skin-blue .main-header li.user-header,
+.skin-blue .main-header .logo {
+    background-color: #222d32;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle:hover,
+.skin-blue .main-header .logo:hover,
+.skin-blue .main-header .logo:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.content-header h1 {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.sub-header h2 {
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.btn-edt .fa {
+    margin-right: 3px;
+}
+
+.content-header .btn.btn-xs {
+    margin-top: -6px;
+}
+
+.vdo-thumb {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-right: 5px;
+    background-color: #f4f4f4;
+    border: 1px solid #dadada;
+}
+
+.vdo-thumb>img {
+    max-width: 100%;
+}
+
+.box-footer .btn {
+    margin-right: 5px;
+}
+
+.btn-edt+.btn-del {
+    margin-left: 7px;
+}
+
+/*Sidebar Menu CSS*/
+span.pull-right-container{
+    -webkit-transition: all ease-in-out 200ms;
+    -moz-transition: all ease-in-out 200ms;
+    -ms-transition: all ease-in-out 200ms;
+    transition: all ease-in-out 200ms;
+}
+.active span.pull-right-container{
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}

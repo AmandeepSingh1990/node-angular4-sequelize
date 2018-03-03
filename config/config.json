@@ -1,0 +1,16 @@
+{
+  "production": {
+    "username": "b0652d26a451d4",
+    "password": "0fb7d555",
+    "database": "heroku_7af119f6b543ae2",
+    "host": "us-cdbr-iron-east-03.cleardb.net",
+    "dialect": "mysql"
+  },
+  "local": {
+    "username": "root",
+    "password": "",
+    "database": "mvp",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
